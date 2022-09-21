@@ -2,6 +2,13 @@
 name = "instant-akismet"
 version = "0.1.0"
 edition = "2021"
+license = "Apache-2.0"
+description = "Rust client for Akismet spam protection"
+homepage = "https://github.com/InstantDomain/instant-akismet"
+repository = "https://github.com/InstantDomain/instant-akismet"
+documentation = "https://docs.rs/instant-akismet"
+keywords = ["akismet", "api", "spam", "detection"]
+categories = ["api-bindings", "web-programming"]
 
 [dependencies]
 chrono = { version= "0.4.19", features = ["serde"] }
