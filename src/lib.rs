@@ -354,7 +354,6 @@ mod tests {
     use reqwest::Client;
 
     #[tokio::test]
-    // #[ignore]
     async fn verify_client_key() -> Result<(), Box<dyn Error>> {
         let akismet_key = match env::var("AKISMET_KEY") {
             Ok(value) => value,
@@ -374,7 +373,6 @@ mod tests {
     }
 
     #[tokio::test]
-    // #[ignore]
     async fn check_known_spam() -> Result<(), Box<dyn Error>> {
         let akismet_key = match env::var("AKISMET_KEY") {
             Ok(value) => value,
@@ -401,7 +399,6 @@ mod tests {
     }
 
     #[tokio::test]
-    // #[ignore]
     async fn check_known_ham() -> Result<(), Box<dyn Error>> {
         let akismet_key = match env::var("AKISMET_KEY") {
             Ok(value) => value,
@@ -428,7 +425,6 @@ mod tests {
     }
 
     #[tokio::test]
-    // #[ignore]
     async fn submit_spam() -> Result<(), Box<dyn Error>> {
         let akismet_key = match env::var("AKISMET_KEY") {
             Ok(value) => value,
@@ -453,7 +449,6 @@ mod tests {
     }
 
     #[tokio::test]
-    // #[ignore]
     async fn submit_ham() -> Result<(), Box<dyn Error>> {
         let akismet_key = match env::var("AKISMET_KEY") {
             Ok(value) => value,
