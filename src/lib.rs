@@ -408,8 +408,7 @@ pub enum CheckResult {
     ///
     /// "If the X-akismet-pro-tip header is set to discard, then Akismet has determined that the
     /// comment is blatant spam, and you can safely discard it without saving it in any spam
-    /// queue. Read more about this feature in [this Akismet blog
-    /// post](http://blog.akismet.com/2014/04/23/theres-a-ninja-in-your-akismet/)."
+    /// queue."
     Discard,
 }
 
