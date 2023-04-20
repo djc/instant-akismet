@@ -405,6 +405,10 @@ pub enum CheckResult {
     /// Spam
     Spam,
     /// Guaranteed spam (via pro-tip header)
+    ///
+    /// "If the X-akismet-pro-tip header is set to discard, then Akismet has determined that the
+    /// comment is blatant spam, and you can safely discard it without saving it in any spam
+    /// queue."
     Discard,
 }
 
