@@ -212,14 +212,14 @@ pub struct Comment<'a> {
     pub comment_author_url: Option<&'a str>,
     /// The content that was submitted
     pub comment_content: Option<&'a str>,
-    #[serde(with = "ts_seconds_option")]
     /// The UTC timestamp of the creation of the comment, in ISO 8601 format
     ///
     /// May be omitted for comment-check requests if the comment is sent to the API on creation.
-    pub comment_date_gmt: Option<DateTime<Utc>>,
-    #[serde(with = "ts_seconds_option")]
+    #[serde(rename = "comment_date_gmt", with = "ts_seconds_option")]
+    pub comment_date: Option<DateTime<Utc>>,
     /// The UTC timestamp of the publication time for the content on which the comment was posted
-    pub comment_post_modified_gmt: Option<DateTime<Utc>>,
+    #[serde(rename = "comment_post_modified_gmt", with = "ts_seconds_option")]
+    pub comment_post_modified: Option<DateTime<Utc>>,
     /// Indicates the language(s) in use on the blog or site, in ISO 639-1 format, comma-separated
     ///
     /// A site with articles in English and French might use “en, fr_ca”.
@@ -262,8 +262,8 @@ impl<'a> Comment<'a> {
             comment_author_email: None,
             comment_author_url: None,
             comment_content: None,
-            comment_date_gmt: None,
-            comment_post_modified_gmt: None,
+            comment_date: None,
+            comment_post_modified: None,
             blog_lang: None,
             blog_charset: None,
             user_role: None,
@@ -322,15 +322,15 @@ impl<'a> Comment<'a> {
         self
     }
 
-    /// Set the comment's `comment_date_gmt`
-    pub fn comment_date_gmt(mut self, comment_date_gmt: DateTime<Utc>) -> Self {
-        self.comment_date_gmt = Some(comment_date_gmt);
+    /// Set the comment's `comment_date`
+    pub fn comment_date(mut self, comment_date: DateTime<Utc>) -> Self {
+        self.comment_date = Some(comment_date);
         self
     }
 
-    /// Set the comment's `comment_post_modified_gmt`
-    pub fn comment_post_modified_gmt(mut self, comment_post_modified_gmt: DateTime<Utc>) -> Self {
-        self.comment_post_modified_gmt = Some(comment_post_modified_gmt);
+    /// Set the comment's `comment_post_modified`
+    pub fn comment_post_modified(mut self, comment_post_modified: DateTime<Utc>) -> Self {
+        self.comment_post_modified = Some(comment_post_modified);
         self
     }
 
