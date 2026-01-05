@@ -12,7 +12,7 @@ categories = ["api-bindings", "web-programming"]
 
 [dependencies]
 chrono = { version= "0.4.19", features = ["serde"] }
-reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls-native-roots"] }
+reqwest = { version = "0.13", default-features = false, features = ["default-tls", "json"] }
 serde = { version = "1.0.115", features = ["derive"] }
 serde_json = "1.0.57"
 serde_qs = "0.15"
